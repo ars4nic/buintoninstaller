@@ -6,7 +6,7 @@ else
 	input="$SCRIPTPATH/aptinstall.txt"
 fi
 
-pkgct=`wc -l < $input`
+pkgct=$(expr "`wc -l < $input`" - 1)
 
 progbar=""
 
@@ -29,8 +29,8 @@ progbar()
 		fi	
 
 		progbarl=$(expr $w - 10)
-		itemct=$(expr $2 - 1)
-#		printf "\r[%-${progbarl}s](%2d%%)" "" ""
+		itemct=$2
+		printf -v progout "\r[%-${progbarl}s](%2d%%)" "" ""
 	fi
 	
 
@@ -67,7 +67,7 @@ else
 fi
 
 	progbar "-i" "$pkgct"
-linect=1	
+linect=0	
 while IFS= read -r line
 do
 	progbar	
