@@ -1,5 +1,22 @@
 vim
+--text editor
 htop
+--task manager
 git
+--github
 procinfo
+--lsdev, usb tools
+build-essential
+-- C compiler
+python3
+--python 3
+
+python
+--python 2
+
+python3-pip
+--Pip module, I have no idea
+
+
+
 
